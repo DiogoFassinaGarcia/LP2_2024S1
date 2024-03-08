@@ -6,4 +6,5 @@ int main(void) {
   scanf("%d", &num1);
   scanf("%d", &num2);
   printf("%d, %d, %d, %d", num1 + num2, num1 - num2, num1 * num2, num1 / num2);
+return 0;
 }
