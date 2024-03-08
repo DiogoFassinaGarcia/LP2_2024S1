@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 float cat1, cat2;
 int main(void){
    printf("escreva o primeiro lado do triangulo: ");
