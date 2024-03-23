@@ -1,1 +1,21 @@
+#include <stdio.h>
+#include <stdbool.h>
 
+int interseccoes(int a[], int n, int b[], int m){
+  int resposta[100];
+  int count = 0;
+  for (int i = 0; i < n; i++){
+    for (int j = 0; j < m; j++){
+      if (a[i] == b[j]){
+        resposta[i] = a[i];
+        count = count + 1;
+      }
+    }
+  }
+  printf("A ∩ B = {");
+  for (int i = 0; i < count; i++){
+    printf("%d, ", resposta[i]);
+  }
+  printf("} // resposta");
+ return 0;
+}
