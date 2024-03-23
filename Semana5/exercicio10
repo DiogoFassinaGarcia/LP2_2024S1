@@ -1,1 +1,35 @@
+#include <stdio.h>
+#include <stdbool.h>
 
+bool contem(int v[], int n, int e){
+  // roda pelo vetor inteiro
+  for (int i = 0; i < n; i++){
+    // checka se e é o valor no vetor, se sim, retorna true
+    if (v[i] == e){
+      return true;
+    }
+  }
+  // se não achar e, retorna falso
+  return false;
+}
+
+int uniao(int a[], int n, int b[], int m){
+  int resposta[100];
+  int count = 0;
+  for (int i = 0; i < n; i++){
+    resposta[i] = b[i];
+    count = count +1; 
+    for (int j = 0; j < m; j++){
+      if (contem(b, m, a[i]) == false){
+        resposta[i] = a[i];
+        count = count + 1;
+      }
+    }
+  }
+  printf("A ∪ B = {");
+  for (int i = 0; i < count; i++){
+    printf("%d, ", resposta[i]);
+  }
+  printf("} // resposta");
+ return 0;
+}
