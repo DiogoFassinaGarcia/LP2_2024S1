@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int matrizA[3][3];
+int matrizB[3][3];
+int matrizC[3][3];
+
+int main(void) {
+  for (int i = 0; i < 3; i++){
+    for (int j = 0; j < 3; j++){
+      printf("Digite o valor da posição [%d][%d] da matriz A: ", i, j);
+      scanf("%d", &matrizA[i][j]);
+
+      printf("Digite o valor da posição [%d][%d] da matriz B: ", i, j);
+      scanf("%d", &matrizB[i][j]);
+    }
+  }
+
+  for (int i = 0; i < 3; i++){
+    for (int j = 0; j < 3; j++){
+      matrizC[i][j] = matrizA[i][j] + matrizB[i][j];
+    }
+  }
+
+  for (int i = 0; i < 3; i++){
+    for (int j = 0; j < 3; j++){
+      printf("[%d] ", matrizC[i][j]);
+    }
+    printf("\n");
+    
+  }
+  
+  return 0;
+}
