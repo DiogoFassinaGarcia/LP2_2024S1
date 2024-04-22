@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+int lista[10];
+int tam;
+int divisor;
+
+void Complete_Lista(int arr[], int tam){
+  int x;
+  if (x == tam){
+    printf("insira o numero da posição %d: ", x);
+    scanf("%d", &arr[x]);
+    x = x + 1;
+    Complete_Lista(arr, tam);
+  }
+}
+
+bool divisivel(int arr[],int tam, int m){
+  if (tam == 0){
+    return true;
+  }
+  
+  if (arr[tam] % m == 0){
+    divisivel(arr,tam-1,m);
+  }
+
+  if (arr[tam] % m != 0){
+    return false;
+  }
+return false;
+} 
+
+int divisivel_ex8(int arr[],int tam, int m){
+  int somatoria;
+  if (tam == 0){
+    return somatoria;
+  }
+
+  if (arr[tam] % m == 0){
+    somatoria = somatoria + arr[tam];
+    divisivel(arr,tam-1,m);
+  }
+
+  if (arr[tam] % m != 0){
+    divisivel(arr,tam-1,m);
+  }
+return false;
+} 
+
+int main(void) {
+  printf("insira o tamanho da lista: ");
+  scanf("%d", &tam);
+  Complete_Lista(lista, tam);
+  printf("insira o divisor: ");
+  scanf("%d", &divisor);
+
+  if (divisivel(lista,tam,divisor) == true){
+    printf("A lista é divisivel por %d", divisor);
+  } else {
+    printf("A lista não é divisivel por %d", divisor);
+  }
+  printf("A somatória dos números divisíveis por %d é %d ", divisor, divisivel_ex8(lista,tam,divisor));
+  return 0;
+}
