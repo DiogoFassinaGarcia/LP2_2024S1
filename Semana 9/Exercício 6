@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+// A lista pode ser mudada para alcançar qualquer valor exigido
+
+int list[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+int numero;
+int tamanho;
+
+int iterator = 0;
+
+int busca(int numero, int tamanho, int list[], int iterator){
+  if (numero == list[iterator]){
+    return iterator + 1;
+  }
+  else {
+    if (iterator == tamanho){
+      return -1;
+    }
+    else{
+      return busca(numero, tamanho, list, iterator + 1);
+    }
+  }
+return iterator + 1;
+}
+
+int main(void) {
+  printf("Insira o numero a ser encontrado: ");
+  scanf("%d", &numero);
+  printf("Insira o tamanho da lista: ");
+  scanf("%d", &tamanho);
+
+  printf("O numero esstá no indice %d", busca(numero, tamanho, list, iterator));
+  return 0;
+}
