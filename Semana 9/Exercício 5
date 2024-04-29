@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int numero;
+
+int tamanho;
+
+int resp; 
+
+int reversao(int numero, int tamanho){
+  if (tamanho < 1){
+    return resp;
+  }
+  else {
+    resp = resp * 10 + numero % 10;
+    numero = numero / 10;
+    reversao(numero, tamanho - 1);
+  }
+  return resp;
+}
+
+
+int main(void) {
+  printf("digite um numero: ");
+  scanf("%d", &numero);
+  printf("\ndigite o tamanho do numero: ");
+  scanf("%d", &tamanho);
+  printf("\n%d", reversao(numero, tamanho));
+  return 0;
+}
